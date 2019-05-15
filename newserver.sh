@@ -138,7 +138,7 @@ yum -y install dovecot
 cd /usr/local/
 wget https://dl.eff.org/certbot-auto
 chmod a+x certbot-auto
-./certbot-auto --apache -d $mydomain --agree-tos --email tech@kdev.in --noninteractive
+./certbot-auto --apache -d $mydomain --agree-tos --email tech@kdev.in --noninteractive --no-redirect
 ./certbot-auto renew --dry-run
 cd ~
 sed -i '22s/.*/soft_bounce = no/' /etc/postfix/main.cf
